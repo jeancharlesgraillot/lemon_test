@@ -1,7 +1,7 @@
 <?php
-$ip = $_SERVER['REMOTE_ADDR']; // Recuperation de l'IP du visiteur
+$ip = $_SERVER['REMOTE_ADDR']; // Get visitor ip
 
-$query = @unserialize(file_get_contents('http://ip-api.com/php/'.'185.126.66.172')); //connection au serveur de ip-api.com et recuperation des données
+$query = @unserialize(file_get_contents('http://ip-api.com/php/'.'185.126.66.172')); //Connection to ip-api.com server and get data. If site is online, you can change second parameter with $ip
 
 if($query && $query['status'] == 'success') 
 {

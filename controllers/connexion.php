@@ -34,13 +34,17 @@ if (isset($_POST['firstname']) && !empty($_POST['firstname'])
         
         $firstname = htmlspecialchars($_POST['firstname']);
         $lastname = htmlspecialchars($_POST['lastname']);
+
         $checkIfExist = $formManager->checkIfExist($firstname, $lastname);
+
+        // if user or admin exist, we create a session who stock the user or admin name
         if ($checkIfExist) 
         {
             
             $_SESSION['firstname'] = $firstname;
             $_SESSION['admin'] = $checkIfExist->getAdmin();
-
+            
+            // Redirection change if user is an admin or not 
             if ($_SESSION['admin'] == 0)
             {
                 header('Location: index.php');

@@ -23,7 +23,7 @@
     <div class="logonavbar row">
       <div class="logo col-3 col-lg-3">
         <a href="index.php" class="text-decoration-none">
-          <h1 class="h5 blackText">Lemon test</h1>
+          <h1 class="h5 blackText">Lemon (in)test</h1>
         </a>
       </div>
       <div class="col-6 d-flex flex-column flex-md-row">

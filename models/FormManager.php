@@ -38,7 +38,11 @@ class FormManager{
         return $this;
     }
 
-
+    /**
+     * Get all users of _db
+     *
+     * @return  array
+     */ 
     public function getUsers()
     {
         // Array declaration
@@ -58,7 +62,11 @@ class FormManager{
         return $arrayOfUsers;
     }
 
-
+    /**
+     * Get all users of _db ordered by country
+     *
+     * @return  array
+     */ 
     public function getUsersByCountry()
     {
                 // Array declaration
@@ -80,7 +88,12 @@ class FormManager{
     }
     
 
-
+    /**
+     * Get user by id
+     *
+     * @param $id
+     * @return instance of new User object
+     */ 
     public function getUser($id)
     {
         $user;
@@ -119,10 +132,10 @@ class FormManager{
 
 
         /**
-     * Check if user exists or not
+     * Check if user exists or not and return a user object
      *
-     * @param string $name
-     * @return boolean
+     * @param string $firstname, $lastname
+     * @return User 
      */
     public function checkIfExist(string $firstname, $lastname)
     {
@@ -131,13 +144,11 @@ class FormManager{
         $query->bindValue('lastname', $lastname, PDO::PARAM_STR);
         $query->execute();
 
-        // If there's an entry with that name, that's it exists
+        // We return
         $users = $query->fetchAll(PDO::FETCH_ASSOC);
         foreach ($users as $user) {
             return new User($user);
         }
-            
-
     }
 
         /**
@@ -162,9 +173,9 @@ class FormManager{
 
 
         /**
-     * Delete account from DB
+     * Delete user from DB
      *
-     * @param User $User
+     * @param $id
      */
     public function deleteUser($id)
     {

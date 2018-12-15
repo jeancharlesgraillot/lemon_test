@@ -9,9 +9,9 @@ class Database
 {
 
 	const HOST = "localhost",
-		    DBNAME = "", // nom de votre base de données
-		    LOGIN = "", // votre utilisateur
-		    PWD = ""; // votre mot de passe
+		    DBNAME = "", // Name of your database
+		    LOGIN = "", // Your login
+		    PWD = ""; // Your password
 
 	static public function DB(){
 		try

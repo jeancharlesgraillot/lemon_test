@@ -49,7 +49,7 @@ if (isset($_POST['firstname']) && !empty($_POST['firstname'])
             $message = "L'utilisateur existe déjà !";
         }else
         {
-            
+            // Create a user with sent variables 
             $user = new User([
             'firstname' => $firstname,
             'lastname' => $lastname,
@@ -61,10 +61,10 @@ if (isset($_POST['firstname']) && !empty($_POST['firstname'])
             'admin' => $admin
             ]);
 
-
+            //Add the user in database
             $formManager->addUser($user);
 
-
+            // Send an email to the new user
             $recipients = [$_POST['email']];
                 
                 $to = implode(',', $recipients);
@@ -79,10 +79,10 @@ if (isset($_POST['firstname']) && !empty($_POST['firstname'])
                         </body>
                         </html>
                         ';
-                // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini
+                
                 $headers[] = 'MIME-Version: 1.0';
                 $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-                // En-têtes additionnels
+                
                 $headers[] = 'From: Admin lemon-test <noreply@lemon.fr>';
                 
                 mail($to, $subject, $mailMessage, implode("\r\n", $headers));

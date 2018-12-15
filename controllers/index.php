@@ -1,13 +1,30 @@
 <?php
-require ("../entities/Client.php");
-require ("../entities/Produit.php");
 
-//Instance of new Client
-$my_client = new Client("Toto", 56);
-$my_product  = new Produit("Voiture");
+// Register our autoload.
+function loadClass($classname)
+{
+    if(file_exists('../models/'. $classname.'.php'))
+    {
+        require '../models/'. $classname.'.php';
+    }
+    else 
+    {
+        require '../entities/' . $classname . '.php';
+    }
+}
+spl_autoload_register('loadClass');
+session_start();
+require 'geolocalisation.php';
 
-$my_client->addProductToBasket($my_product);
+
+// Connect to the database
+$db = Database::DB();
+
+// Instance an object $vehicleManager with our PDO object
+$formManager = new FormManager($db);
 
 
-include "../views/indexVue.php";
- ?>
+
+
+include "../views/indexView.php";
+?>

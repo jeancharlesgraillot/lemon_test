@@ -10,15 +10,15 @@
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
-  
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../assets/css/normalize.css">
-  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/normalize.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 
 <body>
 
-<header class="d-flex align-items-center bg-light border-bottom border-secondary">
+<header class="d-flex align-items-center blueGreyBackground border-bottom border-secondary">
   <div class="container-fluid my-3">
     <div class="logonavbar row">
       <div class="logo col-3 col-lg-3">
